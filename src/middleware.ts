@@ -4,12 +4,12 @@ import { auth } from "@/auth";
 
 const protectedRoutes = ["/test"];
 
-// const adminRoutes = ["/dashboard"];
+const adminRoutes = ["/dashboard"];
 
 export default async function middleware(request: NextRequest) {
   const session = await auth();
   const pathname = request.nextUrl.pathname;
-  // const isAdmin = session?.user.role === Role.ADMIN;
+  const isAdmin = session?.user?.email === process.env.ADMIN;
 
   // If user is authenticated and trying to access protected route, redirect to sign-in.
   if (!session?.user && protectedRoutes.includes(pathname))
@@ -17,11 +17,11 @@ export default async function middleware(request: NextRequest) {
 
   // If user is authenticated and trying to access sign-in page, redirect to dashboard.
   if (session?.user && pathname.startsWith("/sign-in"))
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+    return NextResponse.redirect(new URL("/", request.url));
 
-  // // If user is not Admin and trying to access admin routes, redirect to dashboard.
-  // if (session?.user && !isAdmin && adminRoutes.includes(pathname))
-  //   return NextResponse.redirect(new URL("/dashboard", request.url));
+  // If user is not Admin and trying to access admin routes, redirect to dashboard.
+  if (session?.user && !isAdmin && adminRoutes.includes(pathname))
+    return NextResponse.redirect(new URL("/", request.url));
 
   return NextResponse.next();
 }
