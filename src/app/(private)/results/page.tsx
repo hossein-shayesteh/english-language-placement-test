@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -17,7 +17,16 @@ interface TestResult {
   createdAt: Date;
 }
 
-export default function ResultsPage() {
+const ResultsPage = () => {
+  return (
+    <Suspense>
+      <Results />
+    </Suspense>
+  );
+};
+export default ResultsPage;
+
+const Results = () => {
   const searchParams = useSearchParams();
   const score = searchParams.get("score");
   const level = searchParams.get("level");
@@ -124,4 +133,4 @@ export default function ResultsPage() {
       )}
     </div>
   );
-}
+};
