@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
+import { getTestResults } from "@/lib/test-result-services";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -12,7 +14,7 @@ interface TestResult {
   id: string;
   score: number;
   level: string;
-  createdAt: string;
+  createdAt: Date;
 }
 
 export default function ResultsPage() {
@@ -26,10 +28,9 @@ export default function ResultsPage() {
     // Fetch test history
     const fetchTestHistory = async () => {
       try {
-        const response = await fetch("/api/test-results");
-        if (response.ok) {
-          const data = await response.json();
-          setTestHistory(data.testResults);
+        const response = await getTestResults();
+        if (response) {
+          setTestHistory(response);
         }
       } catch (error) {
         console.error("Error fetching test history:", error);
@@ -38,7 +39,7 @@ export default function ResultsPage() {
       }
     };
 
-    fetchTestHistory();
+    fetchTestHistory().then();
   }, []);
 
   const getLevelDescription = (level: string) => {
@@ -56,21 +57,21 @@ export default function ResultsPage() {
 
   return (
     <div className="animate-fade-in container mx-auto max-w-3xl py-8">
-      <h1 className="mb-8 text-3xl font-bold">Your Test Results</h1>
-
       {score && level && (
         <Card className="mb-8 overflow-hidden py-0">
-          <div className="bg-primary text-primary-foreground p-6">
-            <h2 className="text-2xl font-semibold">Current Test Result</h2>
+          <div className="text-primary-foreground bg-[#30bde8] p-6">
+            <h2 className="text-xl font-semibold text-[#111618]">
+              Current Test Result
+            </h2>
           </div>
           <div className="p-6">
             <div className="mb-4 flex items-center justify-between">
-              <span className="text-lg font-medium">Your Score:</span>
-              <span className="text-xl font-bold">{score}</span>
+              <span className="font-medium">Your Score:</span>
+              <span className="text-lg font-bold">{score}</span>
             </div>
             <div className="mb-6 flex items-center justify-between">
-              <span className="text-lg font-medium">Your Level:</span>
-              <span className="bg-primary/10 text-primary rounded-full px-4 py-1 text-lg font-semibold">
+              <span className="font-medium">Your Level:</span>
+              <span className="bg-primary/10 text-primary rounded-full px-4 py-1 font-semibold">
                 {level}
               </span>
             </div>
@@ -86,11 +87,11 @@ export default function ResultsPage() {
         </Card>
       )}
 
-      <h2 className="mb-4 text-2xl font-semibold">Test History</h2>
+      <h2 className="mb-4 text-xl font-semibold">Test History</h2>
 
       {loading ? (
         <div className="flex justify-center p-8">
-          <div className="animate-pulse text-lg">Loading test history...</div>
+          <div className="animate-pulse">Loading test history...</div>
         </div>
       ) : testHistory.length > 0 ? (
         <div className="space-y-4">

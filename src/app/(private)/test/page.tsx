@@ -148,7 +148,7 @@ export default function TestPage() {
 
   return (
     <div className="container mx-auto max-w-3xl py-8">
-      <div className="mb-8">
+      <div className="mb-8 px-4">
         <h1 className="mb-4 text-2xl font-bold">
           English Language Placement Test
         </h1>

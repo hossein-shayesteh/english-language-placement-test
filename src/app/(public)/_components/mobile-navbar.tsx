@@ -72,11 +72,7 @@ const MobileNavbar = ({
 
           {/* Spacer to push button to the bottom */}
           <div className="mt-auto">
-            <Button
-              onClick={handleLinkClick}
-              asChild
-              className="h-12 w-full cursor-pointer rounded-xl bg-[#30bde8] px-4 text-base font-bold tracking-[0.015em] text-[#111618] hover:bg-[#30bde8]/90"
-            >
+            <Button onClick={handleLinkClick} asChild className={"w-full"}>
               {status === "authenticated" ? (
                 <Link href={"/test"}>Start Test</Link>
               ) : (

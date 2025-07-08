@@ -28,7 +28,7 @@ const Navbar = () => {
         openMobileSidebar={openMobileSidebar}
       />
       <header className="container mx-auto flex items-center justify-between border-b border-solid border-b-[#f0f3f4] py-3 whitespace-nowrap">
-        <div className="flex items-center gap-4 text-[#111618]">
+        <Link href={"/"} className="flex items-center gap-4 text-[#111618]">
           <div className="size-14">
             <Image
               src={"/fll-logo.PNG"}
@@ -40,7 +40,7 @@ const Navbar = () => {
           <h2 className="text-lg leading-tight font-bold tracking-[-0.015em] text-[#111618]">
             AUT FLL
           </h2>
-        </div>
+        </Link>
         {/*Navbar links*/}
         <div className="hidden flex-1 justify-end gap-8 md:flex">
           <div className="flex items-center gap-9">
@@ -54,7 +54,7 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <button className="flex h-10 cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-[#30bde8] px-4 text-sm leading-normal font-bold tracking-[0.015em] text-[#111618]">
+          <Button>
             {session.status === "authenticated" ? (
               <Link className="truncate" href={"/test"}>
                 Start Test
@@ -64,7 +64,7 @@ const Navbar = () => {
                 Login
               </Link>
             )}
-          </button>
+          </Button>
         </div>
         <div className={"flex md:hidden"}>
           <Button
