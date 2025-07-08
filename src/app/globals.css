@@ -120,3 +120,81 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* Custom animations for test page */
+  .animate-slide-out-left {
+    animation: slideOutLeft 0.5s forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s forwards;
+  }
+  
+  .animate-slide-out-right {
+    animation: slideOutRight 0.5s forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  @keyframes slideOutLeft {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -9,7 +9,8 @@ const adminRoutes = ["/dashboard"];
 export default async function middleware(request: NextRequest) {
   const session = await auth();
   const pathname = request.nextUrl.pathname;
-  const isAdmin = session?.user?.email === process.env.ADMIN;
+  const isAdmin =
+    session?.user?.email?.toLocaleLowerCase() === process.env.ADMIN;
 
   // If user is authenticated and trying to access protected route, redirect to sign-in.
   if (!session?.user && protectedRoutes.includes(pathname))

@@ -1,0 +1,155 @@
+{
+  "beginner_A1_A2": [
+    {
+      "id": "b1",
+      "question": "___ you Ellen? No, I ___ not.",
+      "options": ["are/you", "is/are", "are/am", "am/are"],
+      "correct_answer": "are/am"
+    },
+    {
+      "id": "b2",
+      "question": "Goodbye, Tom. See you ___ Friday.",
+      "options": ["on", "in", "at", "from"],
+      "correct_answer": "on"
+    },
+    {
+      "id": "b3",
+      "question": "Where is your teacher from?",
+      "options": ["She is Brazil", "She is Brazilian", "She is from Brazil"],
+      "correct_answer": "She is from Brazil"
+    },
+    {
+      "id": "b4",
+      "question": "What time ___ your mother usually wake up?",
+      "options": ["do", "are", "does", "have"],
+      "correct_answer": "does"
+    },
+    {
+      "id": "b5",
+      "question": "She can't come to the phone right now. She ___ a shower.",
+      "options": ["has", "have", "is having", "having"],
+      "correct_answer": "is having"
+    },
+    {
+      "id": "b6",
+      "question": "We ___ to the cinema yesterday and we ___ lunch there.",
+      "options": ["went/eaten", "went/ate", "go/eat", "gone/ate"],
+      "correct_answer": "went/ate"
+    },
+    {
+      "id": "b7",
+      "question": "He drives ___ than his brother.",
+      "options": [
+        "more careful",
+        "the most careful",
+        "carefully",
+        "more carefully"
+      ],
+      "correct_answer": "more carefully"
+    }
+  ],
+  "intermediate_B1_B2": [
+    {
+      "id": "i1",
+      "question": "What is your sister like? She is very ___.",
+      "options": ["helpful", "helping", "is helping", "help"],
+      "correct_answer": "helpful"
+    },
+    {
+      "id": "i2",
+      "question": "Have you ever ___ to Japan?",
+      "options": ["gone in", "been", "have been", "went"],
+      "correct_answer": "been"
+    },
+    {
+      "id": "i3",
+      "question": "I'll call you when I ___ home.",
+      "options": ["arrive", "am going to arrive", "will arrive", "arrived"],
+      "correct_answer": "arrive"
+    },
+    {
+      "id": "i4",
+      "question": "If I ___ a million dollars, I ___ a new house.",
+      "options": ["had/would buy", "have/will", "would have/buy", "had/buy"],
+      "correct_answer": "had/would buy"
+    },
+    {
+      "id": "i5",
+      "question": "That's the friend ___ I went on holiday with.",
+      "options": ["which", "who", "where", "whose"],
+      "correct_answer": "who"
+    },
+    {
+      "id": "i6",
+      "question": "___ of the students attended the extra classes, so it was canceled.",
+      "options": ["many", "a few", "few", "some"],
+      "correct_answer": "few"
+    },
+    {
+      "id": "i7",
+      "question": "I ___ for hours. My eyes are sore.",
+      "options": ["studied", "have been studying", "had studied", "study"],
+      "correct_answer": "have been studying"
+    },
+    {
+      "id": "i8",
+      "question": "Have you decided on your holiday? Yes, we ___ to Spain next month.",
+      "options": ["go", "will go", "are going", "will be going"],
+      "correct_answer": "are going"
+    },
+    {
+      "id": "i9",
+      "question": "By the end of the year, I ___ my degree.",
+      "options": [
+        "will finish",
+        "will be finished",
+        "will have finished",
+        "am finishing"
+      ],
+      "correct_answer": "will have finished"
+    },
+    {
+      "id": "i10",
+      "question": "I wish I ___ more time to study yesterday.",
+      "options": ["have had", "had", "had had", "would have"],
+      "correct_answer": "had had"
+    },
+    {
+      "id": "i11",
+      "question": "If he had taken the job, he ___ a lot richer now.",
+      "options": ["would be", "would have been", "was"],
+      "correct_answer": "would be"
+    },
+    {
+      "id": "i12",
+      "question": "When I arrived, they ___ for over an hour.",
+      "options": ["waited", "were waiting", "had been waiting", "have waited"],
+      "correct_answer": "had been waiting"
+    }
+  ],
+  "advanced_C1_C2": [
+    {
+      "id": "a1",
+      "question": "___ had the police arrived than the crowd started to disappear.",
+      "options": ["Only when", "No sooner", "Rarely", "Not only"],
+      "correct_answer": "No sooner"
+    },
+    {
+      "id": "a2",
+      "question": "___ her invaluable advice, I wouldn't have been able to complete the project.",
+      "options": [
+        "If it hadn't been for",
+        "But for",
+        "Had it not been for",
+        "Despite"
+      ],
+      "correct_answer": "But for"
+    },
+    {
+      "id": "a3",
+      "question": "___ it not been for their quick response, the fire would have spread rapidly.",
+      "options": ["If", "Had", "Were", "Should"],
+      "correct_answer": "Had"
+    }
+  ]
+}
