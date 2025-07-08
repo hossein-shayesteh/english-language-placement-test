@@ -65,7 +65,7 @@ const Results = () => {
   };
 
   return (
-    <div className="animate-fade-in container mx-auto max-w-3xl py-8">
+    <div className="animate-fade-in container mx-auto max-w-3xl px-4 py-8">
       {score && level && (
         <Card className="mb-8 overflow-hidden py-0">
           <div className="text-primary-foreground bg-[#30bde8] p-6">

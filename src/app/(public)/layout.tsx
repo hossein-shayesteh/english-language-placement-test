@@ -2,7 +2,7 @@ import React from "react";
 
 import Navbar from "@/app/(public)/_components/navbar";
 
-export default function RootLayout({
+export default function PublicLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
