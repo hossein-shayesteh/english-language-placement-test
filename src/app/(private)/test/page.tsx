@@ -197,12 +197,14 @@ export default function TestPage() {
                 variant="outline"
                 onClick={handleBack}
                 disabled={currentQuestionIndex === 0 || isAnimating}
+                className="cursor-pointer"
               >
                 Back
               </Button>
               <Button
                 onClick={handleNext}
                 disabled={!selectedAnswer || isAnimating}
+                className="cursor-pointer"
               >
                 {currentQuestionIndex < allQuestions.length - 1
                   ? "Next"

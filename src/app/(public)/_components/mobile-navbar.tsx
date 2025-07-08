@@ -28,6 +28,8 @@ const MobileNavbar = ({
 }: MobileNavbarProps) => {
   const { status } = useSession(); // Get user session status
 
+  const isAuthenticated = status === "authenticated";
+
   // Closes the sidebar when a link is clicked
   const handleLinkClick = () => {
     setOpenMobileSidebar(false);
@@ -72,13 +74,11 @@ const MobileNavbar = ({
 
           {/* Spacer to push button to the bottom */}
           <div className="mt-auto">
-            <Button onClick={handleLinkClick} asChild className={"w-full"}>
-              {status === "authenticated" ? (
-                <Link href={"/test"}>Start Test</Link>
-              ) : (
-                <Link href={"/sign-in"}>Login</Link>
-              )}
-            </Button>
+            <Link href={isAuthenticated ? "/test" : "/sign-in"}>
+              <Button className="w-full cursor-pointer">
+                {isAuthenticated ? "Start Test" : "Login"}
+              </Button>
+            </Link>
           </div>
         </div>
       </SheetContent>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -20,6 +20,8 @@ export const navbarLinks = [
 const Navbar = () => {
   const session = useSession();
   const [openMobileSidebar, setOpenMobileSidebar] = useState(false);
+
+  const isAuthenticated = session.status === "authenticated";
 
   return (
     <>
@@ -54,17 +56,11 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <Button>
-            {session.status === "authenticated" ? (
-              <Link className="truncate" href={"/test"}>
-                Start Test
-              </Link>
-            ) : (
-              <Link className="truncate" href={"/sign-in"}>
-                Login
-              </Link>
-            )}
-          </Button>
+          <Link href={isAuthenticated ? "/test" : "/sign-in"}>
+            <Button className="cursor-pointer">
+              {isAuthenticated ? "Start Test" : "Login"}
+            </Button>
+          </Link>
         </div>
         <div className={"flex md:hidden"}>
           <Button
