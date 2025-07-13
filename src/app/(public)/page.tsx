@@ -34,14 +34,11 @@ const Home = async () => {
                   an accurate assessment of your abilities.
                 </h2>
               </div>
-              {session?.user && (
-                <Link
-                  href={"/test"}
-                  className="flex h-10 max-w-[480px] min-w-[84px] cursor-pointer items-center justify-center truncate overflow-hidden rounded-xl bg-[#30bde8] px-4 text-sm leading-normal font-bold tracking-[0.015em] text-[#111618] @[480px]:h-12 @[480px]:px-5 @[480px]:text-base @[480px]:leading-normal @[480px]:font-bold @[480px]:tracking-[0.015em]"
-                >
-                  <Button className="cursor-pointer">Start Test</Button>
-                </Link>
-              )}
+              <Link href={session?.user ? "/test" : "/sign-in"}>
+                <Button className="w-full cursor-pointer">
+                  {session?.user ? "Start Test" : "Login"}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
